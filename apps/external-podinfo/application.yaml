@@ -1,21 +1,21 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: external-podinfo
-#   namespace: argocd # Or the namespace where Argo CD is installed
-# spec:
-#   project: default
-#   source:
-#     repoURL: https://github.com/stefanprodan/podinfo.git 
-#     targetRevision: HEAD
-#     path: kustomize
-#   destination:
-#     server: https://kubernetes.default.svc # Or the URL of your target cluster
-#     # namespace: podinfo # Namespace where podinfo will be deployed
-#   syncPolicy:
-#     automated:
-#       enabled: true
-#       prune: true
-#       selfHeal: true
-#     syncOptions:
-#       - CreateNamespace=true # Automatically create the target namespace if it doesn't exist
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: external-podinfo
+  namespace: argocd # Or the namespace where Argo CD is installed
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/stefanprodan/podinfo.git 
+    targetRevision: HEAD
+    path: kustomize
+  destination:
+    server: https://kubernetes.default.svc # Or the URL of your target cluster
+    namespace: team-a
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true # Automatically create the target namespace if it doesn't exist
