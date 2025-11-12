@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://stefanprodan.github.io/podinfo # Helm chart repository URL
+    repoURL: ghcr.io/stefanprodan/charts/podinfo:6.9.2 # Helm chart repository URL
     chart: podinfo
     targetRevision: 6.6.2 # Specify the desired chart version
     helm:
