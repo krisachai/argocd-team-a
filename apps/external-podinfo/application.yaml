@@ -18,6 +18,7 @@ spec:
     # namespace: podinfo # Namespace where podinfo will be deployed
   syncPolicy:
     automated:
+      enabled: true
       prune: true
       selfHeal: true
     syncOptions:
